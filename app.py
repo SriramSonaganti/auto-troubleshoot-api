@@ -1,5 +1,6 @@
 from PIL import Image, ImageOps
 from flask import Flask, jsonify, request
+from Yolo.yolo_detection_images import detectWifiRouter
 from numpy import asarray
 import numpy as np
 import tensorflow as tf
