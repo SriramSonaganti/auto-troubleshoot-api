@@ -18,7 +18,7 @@ ans=[]
 classes=["Cpu_Fan_Noise","Ram_Disconnected_Sound"]
 
 
-model=None
+model
 
 def loadmodel():
     global model
