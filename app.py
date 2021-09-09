@@ -62,5 +62,6 @@ def detect():
     
 
 if __name__ == "__main__":
+    loadmodel()
     app.run(debug=True)
     
