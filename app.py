@@ -1,10 +1,8 @@
 from PIL import Image, ImageOps
 from flask import Flask, jsonify, request
 from numpy import asarray
-from Yolo.yolo_detection_images import detectWifiRouter
 import numpy as np
 import librosa
-#from keras.models import load_model
 import tensorflow as tf
 
 app = Flask(__name__)
@@ -47,36 +45,6 @@ def prediction():
             return str(ans[-1])
     return "files not saved"
 
-
-
-#yolo-v3-detection
-@app.route('/predict-image', methods=['POST','GET'])
-def detect():
-    # img=request.args['image']
-    # img_path='images/'+img
-    # results=detectWifiRouter(img_path)
-    # return jsonify(results)
-    if (request.method == 'POST'):
-        if request.files:
-            #img_path = request.files.get('image')
-            #img_path = 'images/1.jpeg'
-            image = Image.open(request.files['image'])
-            # print(image.format)
-            # print(image.size)
-            # print(image.mode)
-            numpydata = asarray(image)
-            # print(type(numpydata))
-            #
-            # shape
-            # print(numpydata.shape)
-            result = detectWifiRouter(numpydata)
-            return result
-
-        return "file not saved"
-
-#app.run()
-#host="0.0.0.0"
 if __name__ == "__main__":
-    app.debug = False
-    loadmodel()
-    app.run()
+    app.run(debug=True)
+    
