@@ -19,12 +19,10 @@ def loadmodel():
     model = tf.keras.Model('audio/my_model.h5')
 
 
-@app.route('/',methods=['POST','GET'])
+@app.route('/')
 def hello():
     return "API FOR IMAGE AND AUDIO CLASSIFCATION {made by patient care dev team}"
 
-
-# @app.route('/')
 @app.route('/predict-audio',methods=['POST','GET'])
 def prediction():
     if request.method=='GET':
