@@ -7,7 +7,7 @@ from Yolo.yolo_detection_images import detectWifiRouter
 import numpy as np
 import cv2
 import librosa
-from keras.models import load_model
+import tensorflow as tf
 
 app = Flask(__name__)
 
@@ -18,12 +18,12 @@ model=None
 
 def loadmodel():
     global model
-    model=load_model('audio/my_model.h5')
+    model = tf.keras.Model('audio/my_model.h5')
 
 
 @app.route('/',methods=['POST','GET'])
 def hello():
-    return "API FOR IMAGE AND AUDIO CLASSIFCATION"
+    return "API FOR IMAGE AND AUDIO CLASSIFCATION {made by patient care dev team}"
 
 
 # @app.route('/')
