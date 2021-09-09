@@ -5,7 +5,7 @@ def detectWifiRouter(numpydata):
     confidenceThreshold = 0.5
     NMSThreshold = 0.3
 
-    modelConfiguration = 'cfg/yolov3.cfg'
+    modelConfiguration = 'yolov3.cfg'
     modelWeights = 'yolov3_final.weights'
 
     labelsPath = 'coco.names'
