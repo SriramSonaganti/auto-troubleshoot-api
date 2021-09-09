@@ -18,7 +18,7 @@ ans=[]
 classes=["Cpu_Fan_Noise","Ram_Disconnected_Sound"]
 
 
-model
+model = tf.saved_model.load('model')
 
 def loadmodel():
     global model
@@ -62,6 +62,6 @@ def detect():
     
 
 if __name__ == "__main__":
-    loadmodel()
+    
     app.run(debug=True)
     
