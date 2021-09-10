@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "API FOR IMAGE AND AUDIO CLASSIFCATION {made by patient care dev team}"
+    return "API FOR IMAGE AND AUDIO CLASSIFCATION"
 
 
 ans=[]
